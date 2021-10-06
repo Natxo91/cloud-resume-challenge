@@ -59,11 +59,9 @@ def apigw_event():
         "path": "/examplepath",
     }
 
-def fixture_func():
-   return "mocker"
 
 
-def test_lambda_handler(fixture_func):
+def test_lambda_handler():
 
     #ret = app.getfunction(apigw_event, "")
     #data = json.loads(ret["body"])
