@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-import app
+from app import putfunction
 
 
 
