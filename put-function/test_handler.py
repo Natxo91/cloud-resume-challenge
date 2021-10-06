@@ -2,6 +2,8 @@ import json
 
 import pytest
 
+import app
+
 
 
 @pytest.fixture()
