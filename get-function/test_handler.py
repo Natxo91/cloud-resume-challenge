@@ -65,7 +65,7 @@ def test_lambda_handler(apigw_event, mocker):
     #ret = app.getfunction(apigw_event, "")
     #data = json.loads(ret["body"])
     if 1 == 0:
-        ret = 'fatal error'
+        ret = 'fatal error 404'
     else:
         ret = 'OK'
     assert ret == 'OK'
