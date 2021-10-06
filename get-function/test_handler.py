@@ -2,7 +2,6 @@ import json
 
 import pytest
 
-import app.getfunction
 
 @pytest.fixture()
 def apigw_event():
