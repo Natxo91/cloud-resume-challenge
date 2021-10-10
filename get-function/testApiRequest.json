@@ -1,13 +1,4 @@
-import json
-
-import pytest
-
-
-@pytest.fixture()
-def apigw_event():
-    """ Generates API GW Event"""
-
-    return {
+{
   "body": "eyJ0ZXN0IjoiYm9keSJ9",
   "resource": "/{proxy+}",
   "path": "/path/to/resource",
@@ -38,7 +29,7 @@ def apigw_event():
     "CloudFront-Is-SmartTV-Viewer": "false",
     "CloudFront-Is-Tablet-Viewer": "false",
     "CloudFront-Viewer-Country": "US",
-    "Host": "/3lvrx9958d.execute-api.us-east-1.amazonaws.com",
+    "Host": "1234567890.execute-api.us-east-1.amazonaws.com",
     "Upgrade-Insecure-Requests": "1",
     "User-Agent": "Custom User Agent String",
     "Via": "1.1 08f323deadbeefa7af34d5feb414ce27.cloudfront.net (CloudFront)",
@@ -130,19 +121,3 @@ def apigw_event():
     "protocol": "HTTP/1.1"
   }
 }
-
-
-
-def test_lambda_handler(apigw_event,context):
-
-    ret = app.getfunction(apigw_event, "")
-    data = json.loads(ret["body"])
-    #if 1 == 0:
-    #    ret = 'fatal error 404'
-    #else:
-    #    ret = 'OK'
-    #assert ret == 'OK'
-    assert ret["statusCode"] == 200
-    #assert "message" in ret["body"]
-    #assert data["message"] == "hello world"
-    # assert "location" in data.dict_keys()
