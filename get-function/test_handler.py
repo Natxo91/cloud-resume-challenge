@@ -60,6 +60,7 @@ def apigw_event():
         "path": "/examplepath",
     }
 
+@pytest.fixture()
 def context ():
     return "mock"
 
