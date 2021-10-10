@@ -60,6 +60,8 @@ def apigw_event():
         "path": "/examplepath",
     }
 
+def context ():
+    return "mock"
 
 
 def test_lambda_handler(apigw_event,context):
