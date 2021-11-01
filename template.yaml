@@ -10,8 +10,22 @@ Globals:
   Function:
     Timeout: 5
 
-Resources:
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 5
 
+Parameters:
+  HostedZoneParameter:
+    Type: String
+    Description: Z0528804248IT3C0RZLEH
+  DomainNameParameter:
+    Type: String
+    Description: ignaciolarranaga.com
+
+
+
+Resources:
   Mywebsite:
     Type: AWS::S3::Bucket
     Properties:
@@ -25,9 +39,9 @@ Resources:
   MyRoute53Record:
     Type: "AWS::Route53::RecordSetGroup"
     Properties:
-      HostedZoneId: Z0528804248IT3C0RZLEH # TODO: Don't hardcode me
+      HostedZoneId: HostedZoneParameter # TODO: Don't hardcode me
       RecordSets:
-        - Name: ignaciolarranaga.com # TODO: Don't hardcode me
+        - Name: DomainNameParameter # TODO: Don't hardcode me
           Type: A
           AliasTarget:
             HostedZoneId: Z2FDTNDATAQYW2
@@ -51,10 +65,10 @@ Resources:
   MyCertificate:
     Type: AWS::CertificateManager::Certificate
     Properties:
-      DomainName: ignaciolarranaga.com # TODO: Don't hardcode me
+      DomainName: DomainNameParameter # TODO: Don't hardcode me
       DomainValidationOptions:
-            - DomainName: ignaciolarranaga.com
-              HostedZoneId: Z0528804248IT3C0RZLEH
+            - DomainName: DomainNameParameter
+              HostedZoneId: HostedZoneParameter
       ValidationMethod: DNS 
   
   MyDistribution:
@@ -65,7 +79,7 @@ Resources:
           AcmCertificateArn: !Ref MyCertificate
           SslSupportMethod: sni-only
         Aliases:
-          - ignaciolarranaga.com # TODO: Don't hardcode me
+          - DomainNameParameter # TODO: Don't hardcode me
         DefaultCacheBehavior:
           ViewerProtocolPolicy: redirect-to-https
           TargetOriginId: myawsbucket-resume-page.s3-website-us-east-1.amazonaws.com
