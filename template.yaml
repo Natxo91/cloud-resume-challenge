@@ -50,7 +50,7 @@ Resources:
       KeySchema:
         - AttributeName: "ID"
           KeyType: "HASH"
-
+  
   
   MyCertificate:
     Type: AWS::CertificateManager::Certificate
