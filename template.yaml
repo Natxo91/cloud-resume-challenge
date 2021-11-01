@@ -30,9 +30,11 @@ Resources:
   MyRoute53Record:
     Type: "AWS::Route53::RecordSetGroup"
     Properties:
-      HostedZoneId: HostedZoneParameter # TODO: Don't hardcode me
+      HostedZoneId: 
+        Ref: HostedZoneParameter # TODO: Don't hardcode me
       RecordSets:
-        - Name: DomainNameParameter # TODO: Don't hardcode me
+        - Name: 
+            Ref: DomainNameParameter # TODO: Don't hardcode me
           Type: A
           AliasTarget:
             HostedZoneId: Z2FDTNDATAQYW2
@@ -55,10 +57,13 @@ Resources:
   MyCertificate:
     Type: AWS::CertificateManager::Certificate
     Properties:
-      DomainName: DomainNameParameter # TODO: Don't hardcode me
+      DomainName: 
+        Ref: DomainNameParameter # TODO: Don't hardcode me
       DomainValidationOptions:
-            - DomainName: DomainNameParameter
-              HostedZoneId: HostedZoneParameter
+            - DomainName: 
+                Ref: DomainNameParameter
+              HostedZoneId: 
+                Ref: HostedZoneParameter
       ValidationMethod: DNS 
   
   
@@ -70,7 +75,7 @@ Resources:
           AcmCertificateArn: !Ref MyCertificate
           SslSupportMethod: sni-only
         Aliases:
-          - DomainNameParameter # TODO: Don't hardcode me
+          - !Split [",", !Ref DomainNameParameter] # TODO: Don't hardcode me
         DefaultCacheBehavior:
           ViewerProtocolPolicy: redirect-to-https
           TargetOriginId: myawsbucket-resume-page.s3-website-us-east-1.amazonaws.com
