@@ -18,8 +18,6 @@ Parameters:
     Type: String
     Description: ignaciolarranaga.com
 
-
-
 Resources:
   Mywebsite:
     Type: AWS::S3::Bucket
@@ -28,8 +26,6 @@ Resources:
       WebsiteConfiguration:
         IndexDocument: index.html
       BucketName: myawsbucket-resume-page
-      
-      
       
   MyRoute53Record:
     Type: "AWS::Route53::RecordSetGroup"
@@ -54,7 +50,6 @@ Resources:
       KeySchema:
         - AttributeName: "ID"
           KeyType: "HASH"
-
 
   
   MyCertificate:
