@@ -77,7 +77,7 @@ Resources:
           AcmCertificateArn: !Ref MyCertificate
           SslSupportMethod: sni-only
         Aliases:
-          - !Split [",", !Ref DomainNameParameter] # TODO: Don't hardcode me
+          - Ref: DomainNameParameter # TODO: Don't hardcode me
         DefaultCacheBehavior:
           ViewerProtocolPolicy: redirect-to-https
           TargetOriginId: myawsbucket-resume-page.s3-website-us-east-1.amazonaws.com
