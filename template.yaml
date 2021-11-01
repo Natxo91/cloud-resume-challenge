@@ -118,7 +118,7 @@ Resources:
           TableName: cloud-resume-challenge
       CodeUri: get-function/
       Handler: app.getfunction
-      Runtime: python3.10
+      Runtime: python3.9
       Tracing: Active
       Events:
         CatchAll:
@@ -135,7 +135,7 @@ Resources:
           TableName: cloud-resume-challenge
       CodeUri: put-function/
       Handler: app.putfunction
-      Runtime: python3.10
+      Runtime: python3.9
       Tracing: Active
       Events:
         CatchAll:
