@@ -61,6 +61,7 @@ Resources:
               HostedZoneId: HostedZoneParameter
       ValidationMethod: DNS 
   
+  
   MyDistribution:
     Type: "AWS::CloudFront::Distribution"
     Properties:
@@ -86,7 +87,8 @@ Resources:
               OriginReadTimeout: 60
         Enabled: "true"
         DefaultRootObject: index.html
-   
+  
+  
   BucketPolicy:
     Type: AWS::S3::BucketPolicy
     Properties:
@@ -105,6 +107,7 @@ Resources:
                 - /*
       Bucket: !Ref Mywebsite 
   
+  
   GetFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
@@ -122,6 +125,7 @@ Resources:
             Path: /get
             Method: get
             
+  
   PutFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
