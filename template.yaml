@@ -13,10 +13,12 @@ Globals:
 Parameters:
   HostedZoneParameter:
     Type: String
-    Description: Z0528804248IT3C0RZLEH
+    Description: Hosted Zone ID
+    Default: Z0528804248IT3C0RZLEH
   DomainNameParameter:
     Type: String
-    Description: ignaciolarranaga.com
+    Description: domain name 
+    Default: ignaciolarranaga.com
 
 Resources:
   Mywebsite:
