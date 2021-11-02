@@ -1,6 +1,7 @@
 Welcome to my cloud-resume-challenge!
 
-I'm Ignacio and i have made this "famous" cloud-resume-challenge (https://cloudresumechallenge.dev/) to get some hands-on experience with AWS and public cloud in general. Although I started with the original list, I then found the [Open up the cloud ](https://www.youtube.com/c/OpenUpTheCloud) channel on youtube, and that is what i've used as guide. 
+I'm Ignacio and i have made this "famous" cloud-resume-challenge (https://cloudresumechallenge.dev/) to get some hands-on experience with AWS and public cloud in general. 
+I followed the videos from [Open up the cloud ](https://www.youtube.com/c/OpenUpTheCloud) channel on youtube as a guide. 
 
 I installed AWS CLI and started building my application using a CloudFormation template from the beginning to benefit from Infrastructure as Code
 
@@ -12,9 +13,9 @@ Front-End
 - I added a Javascript that would contain the call to the lambda functions. 
 - HTML & CSS: I used a template from the internet, because my focus was more on the architecture.
  
-and then the Back-end part
+Back-end
 
-- DynamoDB Database to store the number of visitors 
+- Created a DynamoDB table to store the number of visitors with an atomic counter 
 - API gateway using Python: a get-function to retrieve the number of visitors and a put-function to update the dynamo-db database.
 - I uploaded my project to Github and implemented CI|CD using Github Actions
 
