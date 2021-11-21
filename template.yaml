@@ -108,7 +108,7 @@ Resources:
           - Sid: PolicyForCloudFrontPrivateContent
             Effect: Allow
             #Principal: "*"
-            Principal: "AWS": "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity !Ref MyDistribution"
+            Principal: "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity !Ref MyDistribution"
             Action: "s3:GetObject"
             Resource: !Join
               - ""
