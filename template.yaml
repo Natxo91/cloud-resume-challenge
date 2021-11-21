@@ -90,7 +90,6 @@ Resources:
           - DomainName: myawsbucket-resume-page.s3-website-us-east-1.amazonaws.com
             Id: myawsbucket-resume-page.s3-website-us-east-1.amazonaws.com
             CustomOriginConfig:
-              S3OriginConfig: !Ref Mywebsite
               OriginProtocolPolicy: http-only
               OriginReadTimeout: 60
         Enabled: "true"
