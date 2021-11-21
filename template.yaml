@@ -24,7 +24,7 @@ Resources:
   Mywebsite:
     Type: AWS::S3::Bucket
     Properties:
-      AccessControl: PublicRead
+      AccessControl: Private
       WebsiteConfiguration:
         IndexDocument: index.html
       BucketName: myawsbucket-resume-page
@@ -90,6 +90,7 @@ Resources:
           - DomainName: myawsbucket-resume-page.s3-website-us-east-1.amazonaws.com
             Id: myawsbucket-resume-page.s3-website-us-east-1.amazonaws.com
             CustomOriginConfig:
+              S3OriginConfig: !Ref Mywebsite
               OriginProtocolPolicy: http-only
               OriginReadTimeout: 60
         Enabled: "true"
@@ -103,9 +104,11 @@ Resources:
         Id: MyPolicy
         Version: 2012-10-17
         Statement:
-          - Sid: PublicReadForGetBucketObjects
+          #- Sid: PublicReadForGetBucketObjects
+          - Sid: PolicyForCloudFrontPrivateContent
             Effect: Allow
-            Principal: "*"
+            #Principal: "*"
+            Principal: "AWS": "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity !Ref MyDistribution"
             Action: "s3:GetObject"
             Resource: !Join
               - ""
