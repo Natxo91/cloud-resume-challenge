@@ -29,6 +29,12 @@ Resources:
         IndexDocument: index.html
       BucketName: myawsbucket-resume-page
       
+  Cloudfrontoriginaccessidentity:
+  Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+  Properties:
+    CloudFrontOriginAccessIdentityConfig:
+      Comment: "OAI for cloudfrond distribution"
+      
   MyRoute53Record:
     Type: "AWS::Route53::RecordSetGroup"
     Properties:
@@ -88,7 +94,15 @@ Resources:
             QueryString: false
         Origins:
           - DomainName: myawsbucket-resume-page.s3-website-us-east-1.amazonaws.com
-            Id: myawsbucket-resume-page.s3-website-us-east-1.amazonaws.com
+            #Id: myawsbucket-resume-page.s3-website-us-east-1.amazonaws.com
+            Id: myS3Origin
+            S3OriginConfig:
+              OriginAccessIdentity:
+                Fn::Join:
+                  - ''
+                  -
+                    - 'origin-access-identity/cloudfront/'
+                    - Ref: Cloudfrontoriginaccessidentity
             CustomOriginConfig:
               OriginProtocolPolicy: http-only
               OriginReadTimeout: 60
@@ -111,7 +125,7 @@ Resources:
               AWS: 
                 - ""
                 - - "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity" 
-                  - !Ref MyDistribution
+                  - !Ref Cloudfrontoriginaccessidentity
             Action: "s3:GetObject"
             Resource: !Join
               - ""
