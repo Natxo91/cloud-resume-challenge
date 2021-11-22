@@ -29,11 +29,11 @@ Resources:
         IndexDocument: index.html
       BucketName: myawsbucket-resume-page
       
-  Cloudfrontoriginaccessidentity:
-  Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
-  Properties:
-    CloudFrontOriginAccessIdentityConfig:
-      Comment: "!Sub Static assets in ${AWS::StackName}"
+  CloudfrontOAI:
+    Type: AWS::CloudFront::CloudfrontOAI
+    Properties:
+      CloudFrontOriginAccessIdentityConfig:
+        Comment: "!Sub Static assets in ${AWS::StackName}"
       
   MyRoute53Record:
     Type: "AWS::Route53::RecordSetGroup"
@@ -100,7 +100,7 @@ Resources:
                 - /
                 - - origin-access-identity
                   - cloudfront
-                  - Ref: Cloudfrontoriginaccessidentity
+                  - Ref: CloudfrontOAI
             CustomOriginConfig:
               OriginProtocolPolicy: http-only
               OriginReadTimeout: 60
@@ -110,7 +110,7 @@ Resources:
   
   BucketPolicy:
     Type: AWS::S3::BucketPolicy
-    DependsOn: Cloudfrontoriginaccessidentity
+    DependsOn: CloudfrontOAI
     Properties:
       Bucket: !Ref WebBucket
       PolicyDocument:
@@ -124,7 +124,7 @@ Resources:
               - - !GetAtt WebBucket.Arn
                 - "/*"
             Principal:
-              CanonicalUser: !GetAtt Cloudfrontoriginaccessidentity.S3CanonicalUserId
+              CanonicalUser: !GetAtt CloudfrontOAI.S3CanonicalUserId
   
   
   GetFunction:
