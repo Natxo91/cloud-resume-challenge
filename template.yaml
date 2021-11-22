@@ -112,7 +112,7 @@ Resources:
     Type: AWS::S3::BucketPolicy
     DependsOn: CloudfrontOAI
     Properties:
-      Bucket: !Ref WebBucket
+      Bucket: !Ref Mywebsite
       PolicyDocument:
         Version: '2012-10-17'
         Statement:
@@ -121,7 +121,7 @@ Resources:
               - s3:GetObject
             Resource: !Join
               - ""
-              - - !GetAtt WebBucket.Arn
+              - - !GetAtt Mywebsite.Arn
                 - "/*"
             Principal:
               CanonicalUser: !GetAtt CloudfrontOAI.S3CanonicalUserId
