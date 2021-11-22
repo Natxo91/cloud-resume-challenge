@@ -100,7 +100,7 @@ Resources:
                 - /
                 - - origin-access-identity
                   - cloudfront
-                    - Ref: Cloudfrontoriginaccessidentity
+                  - Ref: Cloudfrontoriginaccessidentity
             CustomOriginConfig:
               OriginProtocolPolicy: http-only
               OriginReadTimeout: 60
@@ -109,28 +109,22 @@ Resources:
   
   
   BucketPolicy:
-    Type: AWS::S3::BucketPolicy
+     Type: AWS::S3::BucketPolicy
+    DependsOn: Cloudfrontoriginaccessidentity
     Properties:
+      Bucket: !Ref WebBucket
       PolicyDocument:
-        Id: MyPolicy
-        Version: 2012-10-17
+        Version: '2012-10-17'
         Statement:
-          #- Sid: PublicReadForGetBucketObjects
-          - Sid: PolicyForCloudFrontPrivateContent
-            Effect: Allow
-            #Principal: "*"
-            Principal: 
-              AWS: 
-                - ""
-                - - "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity" 
-                  - !Ref Cloudfrontoriginaccessidentity
-            Action: "s3:GetObject"
+          - Effect: Allow
+            Action:
+              - s3:GetObject
             Resource: !Join
               - ""
-              - - "arn:aws:s3:::"
-                - !Ref Mywebsite
-                - /*
-      Bucket: !Ref Mywebsite 
+              - - !GetAtt WebBucket.Arn
+                - "/*"
+            Principal:
+              CanonicalUser: !GetAtt Cloudfrontoriginaccessidentity.S3CanonicalUserId
   
   
   GetFunction:
