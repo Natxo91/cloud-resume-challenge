@@ -30,7 +30,7 @@ Resources:
       BucketName: myawsbucket-resume-page
       
   CloudfrontOAI:
-    Type: AWS::CloudFront::CloudfrontOAI
+    Type: AWS::CloudFront::CloudfrontOriginAccessIdentity
     Properties:
       CloudFrontOriginAccessIdentityConfig:
         Comment: "!Sub Static assets in ${AWS::StackName}"
