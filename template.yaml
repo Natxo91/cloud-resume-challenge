@@ -39,10 +39,10 @@ Resources:
     Type: "AWS::Route53::RecordSetGroup"
     Properties:
       HostedZoneId: 
-        Ref: HostedZoneParameter # TODO: Don't hardcode me
+        Ref: HostedZoneParameter 
       RecordSets:
         - Name: 
-            Ref: DomainNameParameter # TODO: Don't hardcode me
+            Ref: DomainNameParameter 
           Type: A
           AliasTarget:
             HostedZoneId: Z2FDTNDATAQYW2
@@ -94,8 +94,7 @@ Resources:
             QueryString: false
         Origins:
           - DomainName: myawsbucket-resume-page.s3-website-us-east-1.amazonaws.com
-            #Id: myawsbucket-resume-page.s3-website-us-east-1.amazonaws.com
-            Id: myS3Origin
+            Id: myawsbucket-resume-page.s3-website-us-east-1.amazonaws.com
             S3OriginConfig:
               OriginAccessIdentity:
                 Fn::Join:
