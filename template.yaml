@@ -95,15 +95,14 @@ Resources:
         Origins:
           - DomainName: myawsbucket-resume-page.s3-website-us-east-1.amazonaws.com
             Id: myawsbucket-resume-page.s3-website-us-east-1.amazonaws.com
-            S3OriginConfig:
+            CustomOriginConfig:
+              OriginProtocolPolicy: http-only
+              OriginReadTimeout: 60
               OriginAccessIdentity: !Join
                 - /
                 - - origin-access-identity
                   - cloudfront
                   - Ref: CloudfrontOAI
-            CustomOriginConfig:
-              OriginProtocolPolicy: http-only
-              OriginReadTimeout: 60
         Enabled: "true"
         DefaultRootObject: index.html
   
