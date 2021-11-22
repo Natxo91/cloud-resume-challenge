@@ -33,7 +33,7 @@ Resources:
   Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
   Properties:
     CloudFrontOriginAccessIdentityConfig:
-      Comment: "OAI for cloudfrond distribution"
+      Comment: "!Sub Static assets in ${AWS::StackName}"
       
   MyRoute53Record:
     Type: "AWS::Route53::RecordSetGroup"
@@ -96,10 +96,10 @@ Resources:
           - DomainName: myawsbucket-resume-page.s3-website-us-east-1.amazonaws.com
             Id: myawsbucket-resume-page.s3-website-us-east-1.amazonaws.com
             S3OriginConfig:
-              OriginAccessIdentity:
-                Fn::Join:
-                  - ''
-                    - 'origin-access-identity/cloudfront/'
+              OriginAccessIdentity: !Join
+                - /
+                - - origin-access-identity
+                  - cloudfront
                     - Ref: Cloudfrontoriginaccessidentity
             CustomOriginConfig:
               OriginProtocolPolicy: http-only
