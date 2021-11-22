@@ -87,7 +87,7 @@ Resources:
           - Ref: DomainNameParameter # TODO: Don't hardcode me
         DefaultCacheBehavior:
           ViewerProtocolPolicy: redirect-to-https
-          TargetOriginId: !GetAtt Mywebsite.DomainName
+          TargetOriginId: Bucket
           DefaultTTL: 0
           MinTTL: 0
           MaxTTL: 0
