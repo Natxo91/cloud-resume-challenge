@@ -99,7 +99,6 @@ Resources:
               OriginAccessIdentity:
                 Fn::Join:
                   - ''
-                  -
                     - 'origin-access-identity/cloudfront/'
                     - Ref: Cloudfrontoriginaccessidentity
             CustomOriginConfig:
