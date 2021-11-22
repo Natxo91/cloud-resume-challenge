@@ -109,7 +109,7 @@ Resources:
   
   
   BucketPolicy:
-     Type: AWS::S3::BucketPolicy
+    Type: AWS::S3::BucketPolicy
     DependsOn: Cloudfrontoriginaccessidentity
     Properties:
       Bucket: !Ref WebBucket
