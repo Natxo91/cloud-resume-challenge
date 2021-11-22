@@ -87,15 +87,15 @@ Resources:
           - Ref: DomainNameParameter # TODO: Don't hardcode me
         DefaultCacheBehavior:
           ViewerProtocolPolicy: redirect-to-https
-          TargetOriginId: myawsbucket-resume-page.s3-website-us-east-1.amazonaws.com
+          TargetOriginId: !GetAtt Mywebsite.DomainName
           DefaultTTL: 0
           MinTTL: 0
           MaxTTL: 0
           ForwardedValues:
             QueryString: false
         Origins:
-          - DomainName: myawsbucket-resume-page.s3-website-us-east-1.amazonaws.com
-            Id: myawsbucket-resume-page.s3-website-us-east-1.amazonaws.com
+          - DomainName: !GetAtt Mywebsite.DomainName
+            Id: Bucket
             S3OriginConfig:
               OriginAccessIdentity: !Join
                 - /
