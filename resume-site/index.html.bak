@@ -41,7 +41,7 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#visitors">Visitors: <span id="replaceme"/></a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Visitors: <span id="replaceme"/></a></li>
                 </ul>
             </div>
         </nav>
@@ -193,12 +193,6 @@
                            Cambridge C1 English Certificate, 2013
                         </li>
                     </ul>
-                </div>
-            </section>
-			<section class="resume-section" id="visitors">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Visitors</h2>
-                    <p> As a part of the cloud resume challenge, I added this visitors count stored in a DynamoDB table and accessed via API Gateway </p>
                 </div>
             </section>
         </div>
