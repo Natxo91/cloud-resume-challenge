@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -29,7 +29,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">Clarence Taylor</span>
+                <span class="d-block d-lg-none">Ignacio Larrañaga</span>
                 <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="..." /></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -51,7 +51,7 @@
             <section class="resume-section" id="about">
                 <div class="resume-section-content">
                     <h1 class="mb-0">
-                        Larrañaga
+                        LarraÃ±aga
                         <span class="text-primary">Ignacio</span>
                     </h1>
                     <div class="subheading mb-5">
@@ -60,7 +60,7 @@
                     </div>
                     <p class="lead mb-5">I am an 6 year Oracle Database developer with cloud knowledge. I graduated in Business Administration and Computer Science in 2015 and since then i work in a System Engineer role for Indra Soluciones TI, mainly as a PL/SQL developer, adding to the team my technical abilities and problem resolution, as well as an improved comunication with the client, as I speak French natively. </p>
                     <div class="social-icons">
-                        <a class="social-icon" href="https://www.linkedin.com/ignaciolarra�aga"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-icon" href="https://www.linkedin.com/in/ignaciolarrañaga"><i class="fab fa-linkedin-in"></i></a>
                         <a class="social-icon" href="https://github.com/Natxo91"><i class="fab fa-github"></i></a>
                         <!--<a class="social-icon" href="#!"><i class="fab fa-twitter"></i></a>-->
                         <!--<a class="social-icon" href="#!"><i class="fab fa-facebook-f"></i></a>-->
@@ -87,7 +87,7 @@
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
                             <h3 class="mb-0">System Administration Internship</h3>
-                            <div class="subheading mb-3">IBERMÁTICA</div>
+                            <div class="subheading mb-3">IBERMÃTICA</div>
                             <p> Monitoring of servers by technology (Nagios). Development of Powershell scripts.</p>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">January 2015 - February 2015</span></div>
