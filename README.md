@@ -1,7 +1,6 @@
 Welcome to my cloud-resume-challenge!
 
 I'm Ignacio and i have made this "famous" cloud-resume-challenge (https://cloudresumechallenge.dev/) to get some hands-on experience with AWS and public cloud in general. 
-I followed the videos from [Open up the cloud ](https://www.youtube.com/c/OpenUpTheCloud) channel on youtube as a guide. 
 
 I installed AWS CLI and started building my application using a CloudFormation template from the beginning to benefit from Infrastructure as Code
 
