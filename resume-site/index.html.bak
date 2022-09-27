@@ -76,10 +76,12 @@
                         <div class="flex-grow-1">
                             <h3 class="mb-0">System Engineer</h3>
                             <div class="subheading mb-3">Indra</div>
-                            <p><ul> <li>	Corrective and evolutional maintenance of Oracle databases: Development of  Pl/Sql scripts and Linux jobs. SQL Query Optimization. </li>
-                              <li>	Data dictionnary using CASE tools (Z/OS) </li> 
-                            <li>	Monthly follow-up of the monthly ETL: I analyze and correct job failures and send reports concerning the degree of progress of the processus, and write down all incidents in an Excel file.   </li>
-                               <li> I have taken part in the development of a new ETL within the IFRS9 norm implantation: Structure of files analysis, creation of temporary tables, data quality controls and import & export between databases. </li> </ul>
+                            <p><ul> <li> Corrective and evolutional maintenance of a Datawarehouse: I designed and wrote multiple ETL pipelines using PL/SQL as well as Linux shell scripts. </li>
+							<li>Developed complex queries involving analytic functions and stored procedures to perform data aggregations and for data readiness </li>
+                            <li>Updated the Data dictionary in a Z/OS environment </li>
+                             <li>Monthly follow-up of an ETL: I analyzed and fixed job failures and sent reports concerning the degree of progress of the processus for the users, and ensured it ended within business deadlines. </li>
+						<li> Automated Technical documentation and job development  using VBA macros and PL/SQL which allowed to reduce development time. </li>
+ </ul>
 </p>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">March 2015 - Present</span></div>
@@ -156,10 +158,10 @@
                             <span class="fa-li"><i class="fas fa-check"></i></span>
                             Delivery in validation environments using svn
                         </li>
-                        <!--<li>
+                        <li>
                             <span class="fa-li"><i class="fas fa-check"></i></span>
                             Agile Development & Scrum
-                        </li>-->
+                        </li>
                     </ul>
                 </div>
             </section>
